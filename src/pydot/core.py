@@ -684,7 +684,7 @@ def _normalize_node_name(name: NodeName) -> str:
             "attributes, use Graph.set_node_defaults()."
         )
     if isinstance(name, bool):
-        # Graphviz spells boolean identifiers in lowercase.
+        # Lowercase booleans so Node(True) and set_name(True) agree.
         return str(name).lower()
     return str(name)
 
